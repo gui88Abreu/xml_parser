@@ -1,0 +1,3 @@
+instalar com o comando: pipenv install --dev
+executar o programa com o seguinte comando: python3 -W ignore xml_parser.py
+conter arquivo anexado na mesma pasta de xml_parser.py
