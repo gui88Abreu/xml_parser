@@ -1,3 +1,6 @@
+#Desenvolvido por Guilherme Abreu com propósito didático para a disciplina EA876 ministrada na FEEC-UNICAMP
+
+#importa a api necessaria para fazer busca de endereco usando o banco de dados dos correios
 import pycep_correios
 
 #faz a leitura do arquivo xml ignorando qualquer erro de decodificacao de caracteres
@@ -19,7 +22,7 @@ gerador = 'None'
 val_servico = 'None'
 iss_retido = 'None'
 
-#casos de arquivos xml
+#casos de arquivos xml - os seguintes token sao utilizados como base para distinguir os diferentes arquivos xml
 case1 = "NOTAS_FISCAIS"
 case2 = "LoteNotaFiscal"
 case3 = "CompNfse"
@@ -113,5 +116,6 @@ if prestador == 'None' or gerador == 'None':
     print("ERROR: Um dos ceps informado não pôde ser encontrado com base nos dados dos correios,")
     print("Ou o codigo do municipio não pôde ser encontrado com base nos dados do ibge")
 
+#Gera planilha .csv
 print(gerador + ", " + prestador + ", " + val_servico + ", " + iss_retido)
 
