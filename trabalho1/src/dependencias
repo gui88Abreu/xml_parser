@@ -1,0 +1,4 @@
+instalar api dos correios com o comando: pipenv install --dev
+executar o programa com o seguinte comando: python3 -W ignore my_xml_parser.py
+conter o arquivo CodMun.csv na mesma pasta de my_xml_parser.py
+
