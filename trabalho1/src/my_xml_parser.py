@@ -1,7 +1,10 @@
 #Desenvolvido por Guilherme Abreu com propósito didático para a disciplina EA876 ministrada na FEEC-UNICAMP
 
-#importa a api necessaria para fazer busca de endereco usando o banco de dados dos correios
-import pycep_correios
+try:
+    #importa a api necessaria para fazer busca de endereco usando o banco de dados dos correios
+    import pycep_correios
+except:
+    pass
 
 #faz a leitura do arquivo xml ignorando qualquer erro de decodificacao de caracteres
 xml = ''
