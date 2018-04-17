@@ -118,4 +118,3 @@ if prestador == 'None' or gerador == 'None':
 
 #Gera planilha .csv
 print(gerador + ", " + prestador + ", " + val_servico + ", " + iss_retido)
-
