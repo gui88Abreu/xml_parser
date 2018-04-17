@@ -84,7 +84,7 @@ if case2 in token[3] or case3 in token[3] or case4 in token[3] or case5 in token
                 except:
                     continue
 
-        # Em alguns casos nao sera possivel encontrar o municipio atraves do cep, por isso sera necessario encontrar atraves do codigo do municipio
+        #Em alguns casos nao sera possivel encontrar o municipio atraves do cep, por isso sera necessario encontrar atraves do codigo do municipio
         if "CodigoMunicipio" in token[i] and len(stack) > 0 and (prestador == "None" or gerador == "None"):
             file = open("Cod_Mun.csv", "r", encoding="utf-8")
             lines = file.readlines()
@@ -114,7 +114,7 @@ if case2 in token[3] or case3 in token[3] or case4 in token[3] or case5 in token
 
 if prestador == 'None' or gerador == 'None':
     print("ERROR: Um dos ceps informado não pôde ser encontrado com base nos dados dos correios,")
-    print("Ou o codigo do municipio não pôde ser encontrado com base nos dados do ibge")
+    print("ou o codigo do municipio não pôde ser encontrado com base nos dados do ibge")
 
 #Gera planilha .csv
 print(gerador + ", " + prestador + ", " + val_servico + ", " + iss_retido)
