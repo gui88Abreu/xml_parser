@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?><NOTAS_FISCAIS><NOTA_FISCAL>
 
-  <TIPO>Prestado Eletrï¿½nico</TIPO>
+  <TIPO>Prestado Eletronico</TIPO>
   <NUM_NOTA>000000000000775</NUM_NOTA>
   <DATA_HORA_EMISSAO>06/03/2018 09:03:52</DATA_HORA_EMISSAO>
   <DIA_EMISSAO>06</DIA_EMISSAO>
@@ -67,11 +67,11 @@
   <DEDUCAO_ATIVIDADE>1</DEDUCAO_ATIVIDADE>
   <ATV_ECON_ATV>S</ATV_ECON_ATV>
   <COS_SERVICO>0702</COS_SERVICO>
-  <DESCRICAO_SERVICO>0702 - Execução, por administração, empreitada ou subempreitada, de obras de construção civil, hidráulica ou elétrica e de outras obras semelhantes, inclusive sondagem, perfuração de poços, escavação, drenagem e irrigação, terraplanagem, pavimentação, concretagem e a instalação e montagem de produtos, peças e equipamentos (exceto o fornecimento de mercadorias produzidas pelo prestador de serviços fora do local da prestação dos serviços, que fica sujeito ao ICMS).</DESCRICAO_SERVICO>
+  <DESCRICAO_SERVICO>0702 - ExecuÃ§Ã£o, por administraÃ§Ã£o, empreitada ou subempreitada, de obras de construÃ§Ã£o civil, hidrÃ¡ulica ou elÃ©trica e de outras obras semelhantes, inclusive sondagem, perfuraÃ§Ã£o de poÃ§os, escavaÃ§Ã£o, drenagem e irrigaÃ§Ã£o, terraplanagem, pavimentaÃ§Ã£o, concretagem e a instalaÃ§Ã£o e montagem de produtos, peÃ§as e equipamentos (exceto o fornecimento de mercadorias produzidas pelo prestador de serviÃ§os fora do local da prestaÃ§Ã£o dos serviÃ§os, que fica sujeito ao ICMS).</DESCRICAO_SERVICO>
   <ALIQUOTA>5</ALIQUOTA>
   <TIPO_RECOLHIMENTO>A</TIPO_RECOLHIMENTO>
   <OPERACAO_TRIBUTACAO>B</OPERACAO_TRIBUTACAO>
-  <MOTIVO_PAGAMENTO> </MOTIVO_PAGAMENTO>
+  <MOTIVO_PAGAMENTO>Â </MOTIVO_PAGAMENTO>
   <CODIGO_REGIME>1</CODIGO_REGIME>
   <CIDADE_CODIGO_PRESTACAO>48</CIDADE_CODIGO_PRESTACAO>
   <CIDADE_PRESTACAO>CANAA DOS CARAJAS</CIDADE_PRESTACAO>
@@ -79,7 +79,7 @@
   <DOCUMENTO_PRESTACAO>NF</DOCUMENTO_PRESTACAO>
   <SERIE_PRESTACAO>10</SERIE_PRESTACAO>
   <TRIBUTACAO_PRESTACAO>E</TRIBUTACAO_PRESTACAO>
-  <DESCRICAO_NOTA>REFERENTE 7ª MEDIÇÃO (EXECUÇÃO DE OBRAS DE DRENAGEM, PACOTE 2127, A SEREM IMPLANTADOS NO PROJETO FERRO CARAJÁS (S11D), LOCALIZADO NO &lt;br /&gt;MUNICÍPIO DE CANAA DOS CARAJÁS, ESTADO D0 PARÁ)&lt;br /&gt;- Contrato nº: 5900047829&lt;br /&gt;- Liberação: 7&lt;br /&gt;- Pedido n°: 4504216831/00010&lt;br /&gt;- Nº FRS: 1002531035&lt;br /&gt;- Nº RF: 6200650924&lt;br /&gt;- Local da Prestação de Serviço: Canaã dos Carajas&lt;br /&gt;- MATRICULA CEI Nº: 512406706570&lt;br /&gt;---- BASE DE CÁLCULO DO ISS: R$ 778.208,16 X 75% = 583.656,12 X 5% = R$ 29.182,80. &lt;br /&gt;VALOR ISS/QN: R$ 29.182,80. &lt;br /&gt;---- BASE DE CÁLCULO DO INSS: R$ 778.208,16 X 50% = R$ 389.104,08 X 11% = R$ 42.801,45.&lt;br /&gt;VALOR PREVIDÊNCIA: R$ 42.801,45.&lt;br /&gt;OBS: DEDUÇÃO DE 25%, CONFORME PARECER DA AUDITORIA FISCAL DA PMC Nº 045/2017 (ANEXO AO FORMULÁRIO)&lt;br /&gt;</DESCRICAO_NOTA>
+  <DESCRICAO_NOTA>REFERENTE 7Âª MEDIÃ‡ÃƒO (EXECUÃ‡ÃƒO DE OBRAS DE DRENAGEM, PACOTE 2127, A SEREM IMPLANTADOS NO PROJETO FERRO CARAJÃS (S11D), LOCALIZADO NO &lt;br /&gt;MUNICÃPIO DE CANAA DOS CARAJÃS, ESTADO D0 PARÃ)&lt;br /&gt;- Contrato nÂº: 5900047829&lt;br /&gt;- LiberaÃ§Ã£o: 7&lt;br /&gt;- Pedido nÂ°: 4504216831/00010&lt;br /&gt;- NÂº FRS: 1002531035&lt;br /&gt;- NÂº RF: 6200650924&lt;br /&gt;- Local da PrestaÃ§Ã£o de ServiÃ§o: CanaÃ£ dos Carajas&lt;br /&gt;- MATRICULA CEI NÂº: 512406706570&lt;br /&gt;---- BASE DE CÃLCULO DO ISS: R$ 778.208,16 X 75% = 583.656,12 X 5% = R$ 29.182,80. &lt;br /&gt;VALOR ISS/QN: R$ 29.182,80. &lt;br /&gt;---- BASE DE CÃLCULO DO INSS: R$ 778.208,16 X 50% = R$ 389.104,08 X 11% = R$ 42.801,45.&lt;br /&gt;VALOR PREVIDÃŠNCIA: R$ 42.801,45.&lt;br /&gt;OBS: DEDUÃ‡ÃƒO DE 25%, CONFORME PARECER DA AUDITORIA FISCAL DA PMC NÂº 045/2017 (ANEXO AO FORMULÃRIO)&lt;br /&gt;</DESCRICAO_NOTA>
   <CODIGO_VERIFICACAO>626304fe7e3c1d6955ccccd887c5299044d54685</CODIGO_VERIFICACAO>
   <ID_NOTA_FISCAL>86846361</ID_NOTA_FISCAL>
   <VALOR_ISS_RET>29182,80</VALOR_ISS_RET>
