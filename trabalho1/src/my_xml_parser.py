@@ -1,5 +1,15 @@
 #Desenvolvido por Guilherme Abreu com propósito didático para a disciplina EA876 ministrada na FEEC-UNICAMP
 
+#funcao procura pelo endereco atraves do cep
+def catch_city(cep):
+    municipio = 'None'
+    try:
+        endereco = pycep_correios.consultar_cep(cep)
+        municipio = endereco['cidade']
+    except:
+        pass
+    return municipio
+
 try:
     #importa a api necessaria para fazer busca de endereco usando o banco de dados dos correios
     import pycep_correios
@@ -52,41 +62,27 @@ if case2 in token[3] or case3 in token[3] or case4 in token[3] or case5 in token
     
     stack = []
     for i in range(len(token)):
-        #Manipula um pilha para encontrar qual caso o programa esta tratando
+        #Manipula pilha para encontrar o municipio prestador
         if "PrestadorServico" in token[i] or "prestador" in token[i]:
-            if "PrestadorServico" in stack:
+            if "prestador" in stack:
                 stack.pop()
             else:
-                stack.append("PrestadorServico")
+                stack.append("prestador")
 
-        #Manipula um pilha para encontrar qual caso o programa esta tratando
-        if "Servico" == token[i] or "ns3:Servico" == token[i] or "/Servico" == token[i] or "/ns3:Servico" == token[i]:
-            if "Servico" in stack:
+        #Manipula pilha para encontrar o municipio gerador
+        if "OrgaoGerador" in token[i] or "localPrestacao" in token[i]:
+            if "gerador" in stack:
                 stack.pop()
             else:
-                stack.append("Servico")
-        
-        if "localPrestacao" in token[i]:
-            if "localPrestacao" in stack:
-                stack.pop()
-            else:
-                stack.append("localPrestacao")
+                stack.append("gerador")
 
         #Encontra o municipio atraves do cep, fazendo uso de uma conexao com o banco de dados dos correios
         if ("ns3:Cep" == token[i] or "Cep" == token[i] or "cep" == token[i]) and len(stack) > 0:
-            if "PrestadorServico" == stack[0]:
-                try:
-                    endereco = pycep_correios.consultar_cep(token[i+1])
-                    prestador = endereco['cidade']
-                except:
-                    continue
+            if "prestador" == stack[0]:
+                prestador = catch_city(token[i+1])
             else:
-                try:
-                    endereco = pycep_correios.consultar_cep(token[i+1])
-                    gerador = endereco['cidade']
-                except:
-                    continue
-
+                gerador = catch_city(token[i+1])
+                
         #Em alguns casos nao sera possivel encontrar o municipio atraves do cep, por isso sera necessario encontrar atraves do codigo do municipio
         if "CodigoMunicipio" in token[i] and len(stack) > 0 and (prestador == "None" or gerador == "None"):
             file = open("Cod_Mun.csv", "r", encoding="utf-8")
@@ -95,16 +91,16 @@ if case2 in token[3] or case3 in token[3] or case4 in token[3] or case5 in token
             for line in lines:
                 if token[i+1] in line:
                     line = line.split(",")
-                    if stack[0] == "PrestadorServico" and prestador == "None":
+                    if stack[0] == "prestador" and prestador == "None":
                         prestador = line[0].replace('"', "")
-                    if stack[0] == "Servico" and gerador == "None":
+                    if stack[0] == "gerador" and gerador == "None":
                         gerador = line[0].replace('"', "")
                     break
             file.close()
         
         #Identifica o municio gerador em um caso exclusivo
         if "descricaoMunicipio" == token[i] and len(stack) > 0:
-            if stack[0] == "localPrestacao":
+            if stack[0] == "gerador":
                 gerador = token[i+1]
 
         #Identifica o valor dos servicos
