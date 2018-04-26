@@ -1,4 +1,4 @@
-## Instalação opcional
+﻿## Instalação (opcional) 
 - instalar api dos correios com o comando: **pip3 install pycep-correios** `caso nao seja possivel instalá-lo, o programa tentará encontrar o municipio atráves do código do municipio`
 
 ## Execução do programa
