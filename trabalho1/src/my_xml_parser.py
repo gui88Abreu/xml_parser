@@ -26,8 +26,9 @@ while 1:
     except UnicodeDecodeError:
         continue
 
-xml = xml.replace(">", "<") #troca as ocorrencias do primeiro caracter pelo segundo
-token = xml.split("<") #retorna uma lista com os tokens separados pelo caracter especificado
+#segmenta o arquivo lido em tokens e armazena em uma lista chamada token
+xml = xml.replace(">", "<")
+token = xml.split("<")
 
 #inicializa variaveis
 prestador = 'None'
@@ -45,7 +46,7 @@ case6 = "ConsultarNfseResposta"
 case7 = "nfse"
 case8 = "tcLotNFE"
 
-#CASE 1 - arquivos simmples, onde eh preciso apenas identificar os campos corretos para encontrar o token correto
+#CASE 1 - arquivos simples, onde eh preciso apenas identificar os campos corretos com comparacoes
 if case1 in token[3] or case8 in token[1]:
     for i in range(len(token)):
         if "PRESTADOR_CIDADE"  == token[i] or "tsMunPtd"  == token[i]:
@@ -62,14 +63,15 @@ if case2 in token[3] or case3 in token[3] or case4 in token[3] or case5 in token
     
     stack = []
     for i in range(len(token)):
-        #Manipula pilha para encontrar o municipio prestador
+        
+        #Manipula pilha para distinguir os campos cep e codigo do municipio para a hierarquia do prestador
         if "PrestadorServico" in token[i] or "prestador" in token[i]:
             if "prestador" in stack:
                 stack.pop()
             else:
                 stack.append("prestador")
 
-        #Manipula pilha para encontrar o municipio gerador
+        #Manipula pilha para distinguir os campos cep e codigo do municipio para a hierarquia do gerador
         if "OrgaoGerador" in token[i] or "localPrestacao" in token[i]:
             if "gerador" in stack:
                 stack.pop()
@@ -98,12 +100,12 @@ if case2 in token[3] or case3 in token[3] or case4 in token[3] or case5 in token
                     break
             file.close()
         
-        #Identifica o municio gerador em um caso exclusivo
+        #Identifica o municio gerador em um caso exclusivo onde o campo que possui o municipio gerador possui a tag <descricaoMunicipio>
         if "descricaoMunicipio" == token[i] and len(stack) > 0:
             if stack[0] == "gerador":
                 gerador = token[i+1]
 
-        #Identifica o valor dos servicos
+        #Identifica o valor do servico
         if "ns3:ValorServicos" == token[i] or "ValorServicos" == token[i] or "valorTotalServico" == token[i]:
             val_servico = token[i+1].replace(",", ".")
         
@@ -111,9 +113,9 @@ if case2 in token[3] or case3 in token[3] or case4 in token[3] or case5 in token
         if "ns3:ValorIss" == token[i] or "ValorIss" == token[i] or "valorTotalISS" == token[i]:
             iss_retido = token[i+1].replace(",", ".")
 
-if prestador == 'None' or gerador == 'None':
-    print("ERROR: Um dos ceps informado não pôde ser encontrado com base nos dados dos correios,")
-    print("ou o codigo do municipio não pôde ser encontrado com base nos dados do ibge")
+#Informa o usuario caso o programa nao tenha coseguido encontrar algum daod
+if prestador == 'None' or gerador == 'None' or val_servico == 'None' or iss_retido == 'None':
+    print("ERROR: O programa não foi capaz de encontrar um ou mais dados com as informações fornecidas no arquivo XML")
 
 #Gera planilha .csv
 print(gerador + ", " + prestador + ", " + val_servico + ", " + iss_retido)
